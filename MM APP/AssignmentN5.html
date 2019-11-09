@@ -44,8 +44,10 @@
 	}
 	.hero h1 {
     /* Text styles */
-    font-size: 5em;
-    color: black;
+    font-size: 6em;
+    color: white;
+	-webkit-text-stroke: 2px red;
+	text-shadow: 0px 4px 4px #282828;
     /* Margins */
     margin-top: 0;
     margin-bottom: 0.5em;
@@ -77,7 +79,7 @@
     /* Sizing */
     width: 100vw;
     height: 30vh;
-    
+    color: black;
     /* Flexbox stuff */
     display: flex;
     justify-content: center;
@@ -96,7 +98,9 @@
 	.hero2 h1 {
     /* Text styles */
     font-size: 5em;
-    color: black;
+    color: white;
+	-webkit-text-stroke: 2px red;
+	text-shadow: 0px 4px 4px #282828;
     /* Margins */
     margin-top: 0;
     margin-bottom: 0.5em;
@@ -124,20 +128,15 @@
 	/* Background styles */
     background-color: white;
 	}
-	
 	  .fakeimg {
 		height: 200px;
 		background: #aaa;
-	  }
-	  .fakeimg2 {
-		height: 1000px;
-		background: #aaa;
-	  }
+	}
 	  body, html{
 		height: 100%;
 		margin: 0;
 		font: 400 15px/1.8 "Lato", sans-serif;
-		color: #777;
+		color: #black;
 	  }
 
 	/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
@@ -162,6 +161,72 @@
 		display: block;
 		text-align: left;
 	  }
+	}
+
+	/* Style the list */
+	ul.breadcrumb {
+	  padding: 10px 16px;
+	  list-style: none;
+	  background-color: #eee;
+	}
+
+	/* Display list items side by side */
+	ul.breadcrumb li {
+	  display: inline;
+	  font-size: 18px;
+	}
+
+	/* Add a slash symbol (/) before/behind each list item */
+	ul.breadcrumb li+li:before {
+	  padding: 8px;
+	  color: black;
+	  content: "/\00a0";
+	}
+
+	/* Add a color to all links inside the list */
+	ul.breadcrumb li a {
+	  color: #0275d8;
+	  text-decoration: none;
+	}
+
+	/* Add a color on mouse-over */
+	ul.breadcrumb li a:hover {
+	  color: #01447e;
+	  text-decoration: underline;
+	}
+	.col-sm-6
+	{
+		overflow: hidden;	
+	}
+	.slider_images
+	{
+		width: 5600px; 
+		height: 315px;
+		position: relative;
+		animation: Sliding-img 10s infinite;
+	}
+	.slider_images img
+	{
+		width: 560px; 
+		height: 315px;
+		float: left;		
+	}
+	@keyframes Sliding-img
+	{
+		0%{left: 0px;}
+		10%{left: 0px}
+		15%{left: -560px}
+		25%{left: -560px;}
+		30%{left: -1120px}
+		40%{left: -1120px}
+		45%{left: -1680px}
+		55%{left: -1680px}
+		60%{left: -2240px}
+		70%{left: -2240px}
+		75%{left: -2800px}
+		85%{left: -2800px}
+		90%{left: -3360px}
+		100%{left: -3360px}
 	}
   </style>
 </head>
@@ -206,16 +271,23 @@
 	<br>
 	<section class="hero">
 		<div class="hero-inner">
-			<h1>Welcome</h1>
+			<h1>Welcome to all things sorting</h1>
 			<a class="btn" onclick="clickBtn('1')">Algorithms</a>
 		</div>
 	</section>
 	
-	<br><br><br>
+	<br>
+	<ul class="breadcrumb">
+	<li>Home</li>
+	</ul>
+	<br>
+	<br>
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-4">
+		<center>
 		  <img src="code.jpg" width = "350" height = "200" alt = "Algorithms" onclick="clickBtn('1')" onmouseover="" style="cursor: pointer;">
+		</center>
 		</div>
 		<div class="col-sm-8">
 		  <h2>Algorithms</h2>
@@ -231,15 +303,15 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-4">
+		<center>
 		   <img src="comparison.jpg" width = "350" height = "200" alt = "Comparisons" onclick="clickBtn('2')" onmouseover="" style="cursor: pointer;">
+		</center>
 		</div>
 		<div class="col-sm-8">
 		  <h2>Comparisons</h2>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
-		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
-		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
-		  Suspendisse tristique diam et tempus efficitur. Maecenas suscipit mauris sit amet magna tempor aliquet. Morbi blandit lacus quis nunc lacinia convallis nec quis augue. 
-		  Phasellus blandit viverra elementum. Mauris semper consequat metus. Nunc facilisis maximus nulla, in volutpat ipsum rhoncus ac. Nullam lobortis tristique mi, vitae rutrum neque vulputate id.</p>
+		  <p>This allows us to compare one algorithm for example merge sort to another algorithm i.e. insertion sort, it will show us how their complexity relates to one another and how they
+		  handle larger and larger file sets, or larger arrays in the case of elements that we wish to sort. Currently the picking of these algorithms are not implemented however in the full version
+		  will allow the user to pick different algorithms and give select output based on which algorithms the user enters.</p>
 		</div>
 	  </div>
 	</div>
@@ -248,7 +320,9 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-4">
+		<center>
 		  <img src="complexity.jpg" width = "350" height = "200" alt = "Complexity" onclick="clickBtn('3')" onmouseover="" style="cursor: pointer;">
+		</center>
 		</div>
 		<div class="col-sm-8">
 		  <h2>Complexity table</h2>
@@ -269,13 +343,19 @@
 			<h1>Algorithms page</h1>
 			<a class="btn" onclick="clickBtn('2')">Comparisons</a>
 		</div>
-	</section>
-	
-	<br><br><br>
+	</section>	
+	<br>
+	<ul class="breadcrumb">
+	<li><a href="#" onclick="clickBtn('0')">Home</a></li>
+	<li>Algorithms</li>
+	</ul>
+	<br><br>
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-4">
-		  <img src="mergeSort.png" width = "350" height = "200" alt = "Merge sort" onclick="clickBtn('4')" onmouseover="" style="cursor: pointer;">
+		<center>
+		  <img src="mergeSort7.png" width = "350" height = "200" alt = "Merge sort" onclick="clickBtn('4')" onmouseover="" style="cursor: pointer;">
+		</center>
 		</div>
 		<div class="col-sm-8">
 		  <h2>Merge sort</h2>
@@ -290,7 +370,9 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-4">
+		<center>
 		  <div class="fakeimg" onclick="clickBtn('5')" onmouseover="" style="cursor: pointer;">Fake Image</div>
+		</center>
 		</div>
 		<div class="col-sm-8">
 		  <h2>Insertion sort</h2>
@@ -307,7 +389,9 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-4">
+		<center>
 		  <div class="fakeimg" onclick="clickBtn('6')" onmouseover="" style="cursor: pointer;">Fake Image</div>
+		</center>
 		</div>
 		<div class="col-sm-8">
 		  <h2>Bubble sort</h2>
@@ -324,7 +408,9 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-4">
+		<center>
 		  <div class="fakeimg" onclick="clickBtn('7')" onmouseover="" style="cursor: pointer;">Fake Image</div>
+		</center>
 		</div>
 		<div class="col-sm-8">
 		  <h2>Counting sort</h2>
@@ -341,7 +427,9 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-4">
+		<center>
 		  <div class="fakeimg" onclick="clickBtn('8')" onmouseover="" style="cursor: pointer;">Fake Image</div>
+		</center>
 		</div>
 		<div class="col-sm-8">
 		  <h2>Heapsort</h2>
@@ -358,7 +446,9 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-4">
+		<center>
 		  <div class="fakeimg" onclick="clickBtn('9')" onmouseover="" style="cursor: pointer;">Fake Image</div>
+		</center>
 		</div>
 		<div class="col-sm-8">
 		  <h2>Quick sort</h2>
@@ -383,14 +473,25 @@
 			<a class="btn" onclick="clickBtn('3')">Complexity</a>
 		</div>		
 	</section>
-	<br><br><br>
+	<br>
+	<ul class="breadcrumb">
+	<li><a href="#" onclick="clickBtn('0')">Home</a></li>
+	<li>Comparisons</li>
+	</ul>
+	<br><br>
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-6">
-		  <div class="fakeimg">Fake Image</div>
+		<center>
+		<h2>Merge sort</h2>
+		<img src="mergeSortC.png" width = "500" height = "315" alt = "Merge sort">
+		</center>
 		</div>
 		<div class="col-sm-6">
-		  <div class="fakeimg">Fake Image</div>
+		<center>
+		<h2>Insertion sort</h2>
+		  <img src="insertionSortC.png" width = "500" height = "315" alt = "Insertion sort">
+		</center>
 		</div>
 	  </div>
 	</div>
@@ -398,12 +499,11 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-14">
-		  <h2>Comparisons</h2>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
-		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
-		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
-		  Suspendisse tristique diam et tempus efficitur. Maecenas suscipit mauris sit amet magna tempor aliquet. Morbi blandit lacus quis nunc lacinia convallis nec quis augue. 
-		  Phasellus blandit viverra elementum. Mauris semper consequat metus. Nunc facilisis maximus nulla, in volutpat ipsum rhoncus ac. Nullam lobortis tristique mi, vitae rutrum neque vulputate id.</p>
+		  <h2>Time</h2>
+		  <p>Here we can see a comparison between merge sort and insertion sort. As is quite apparant merge sort complexity for all three, best, average, and worst case scenarios occupy the same 
+		  space and therefore have one line atop another here. For insertion sort on the other hand, we can one very faint line at the bottom which is the best case scenario taking order n to complete. However this
+		  is vastly over shadowed by the dramatic order n^2 which happens in both its average and worst case scenarios. (IMPORTANT NOTE: In the full version of this site a user will be able to pick the type of algorithm
+		  from a drop menu above these images which will give content specific for the 15 possible comparisons afforded by this website. However as this is just a prototype i have not implemented this functionality).</p>
 		</div>
 	  </div>
 	</div>
@@ -411,10 +511,16 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-6">
-		  <div class="fakeimg">Fake Image</div>
+		  <center>
+		  <h2>Merge sort</h2>
+		  <img src="mergeSortS.png" width = "500" height = "315" alt = "Merge sort">
+		</center>
 		</div>
 		<div class="col-sm-6">
-		  <div class="fakeimg">Fake Image</div>
+		<center>
+		<h2>Insertion sort</h2>
+		  <img src="insertionSortS.png" width = "500" height = "315" alt = "Insertion sort">
+		</center>
 		</div>
 	  </div>
 	</div>
@@ -422,12 +528,12 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-14">
-		  <h2>Comparisons</h2>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
-		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
-		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
-		  Suspendisse tristique diam et tempus efficitur. Maecenas suscipit mauris sit amet magna tempor aliquet. Morbi blandit lacus quis nunc lacinia convallis nec quis augue. 
-		  Phasellus blandit viverra elementum. Mauris semper consequat metus. Nunc facilisis maximus nulla, in volutpat ipsum rhoncus ac. Nullam lobortis tristique mi, vitae rutrum neque vulputate id.</p>
+		  <h2>Space</h2>
+		  <p>Above we see the space complexity for merge sort and insertion sort. Merge sort here as is quit apparant has a much higher use of space i.e. order(n) this is due to the fact that for every element we
+		  basically create its own array in a sense using the same amount of space of the original array twice over to get the desired sorting result. For insertion sort it uses order(1) which is the most efficient possible
+		  amount of space we can use, i.e. it uses the space of the original stored data and no more as it sorts within the original array itself. Meaning if we want a consitant result and have no care of space requirements then
+		  merge sort is ideal however on the flip side if we have very limited space however care little of consistant sorting times then insertion sort is ideal. (IMPORTANT NOTE: In the full version of this site a user will 
+		  be able to pick the type of algorithm from a drop menu above these images which will give content specific for the 15 possible comparisons afforded by this website. However as this is just a prototype i have not implemented this functionality).</p>
 		</div>
 	  </div>
 	</div>
@@ -442,7 +548,12 @@
 			<a class="btn" onclick="clickBtn('0')">Home</a>
 		</div>
 	</section>
-	<br><br><br>
+	<br>
+	<ul class="breadcrumb">
+	<li><a href="#" onclick="clickBtn('0')">Home</a></li>
+	<li>Complexity</li>
+	</ul>
+	<br><br>
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-14">
@@ -457,11 +568,12 @@
 	  <div class="row">
 		<div class="col-sm-14">
 		  <h2>About complexity</h2>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
-		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
-		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
-		  Suspendisse tristique diam et tempus efficitur. Maecenas suscipit mauris sit amet magna tempor aliquet. Morbi blandit lacus quis nunc lacinia convallis nec quis augue. 
-		  Phasellus blandit viverra elementum. Mauris semper consequat metus. Nunc facilisis maximus nulla, in volutpat ipsum rhoncus ac. Nullam lobortis tristique mi, vitae rutrum neque vulputate id.</p>
+		  <p>Ok so lets talk complexity, when we rate from great to awful this can be somewhat misleading, we are using the great green to point out that an algorithm is using an order that is so small in comparison to say
+		  exponential growth which we see as highlighted in red with the awful tag. The reason for it is anything that is exponitial in growth we generally want to avoid if at all possible. Thats not to say that we wont have to use it
+		  there maybe times with indeed we do need to use an algorithm with some type of exponential growth. Also when we signify ordre (n log(n)) as being bad this is say in comparison to order(1) and in fact algorithms with this order
+		  i.e. mergesort and quick sort are actually quite often used due to their better consistancy. Obviously logarithmic algorithms i.e. log(n), or algorithms with order(n), or order(n+k) are preffered we also have to be very aware 
+		  of where we are using them and what specifically we are using them for. At all times our purpose and hardware make big considerations when deciding on an algorithm so dont discount one above that is cited as being bad or awful,
+		  as it may well be the one you need.</p>
 		</div>
 	  </div>
 	</div>
@@ -476,13 +588,25 @@
 			<a class="btn" onclick="clickBtn('0')">Home</a>
 		</div>
 	</section>
-	<br><br><br>
+	<br>
+	<ul class="breadcrumb">
+	<li><a href="#" onclick="clickBtn('0')">Home</a></li>
+	<li><a href="#" onclick="clickBtn('1')">Algorithms</a></li>
+	<li>Merge sort</li>
+	</ul>
+	<br><br>
 	<div class="container">
 	  <div class="row">
-		<div class="col-sm-6">
-		<center>
-		  <img src="mergeSort.png" width = "700" height = "315" alt = "Merge sort">
-		</center>
+	  <div class= "col-sm-6">
+		  <div class="slider_images">
+			<img src = "mergeSort1.png" alt="merge sort 1">
+			<img src = "mergeSort2.png" alt="merge sort 2">
+			<img src = "mergeSort3.png" alt="merge sort 3">
+			<img src = "mergeSort4.png" alt="merge sort 4">
+			<img src = "mergeSort5.png" alt="merge sort 5">
+			<img src = "mergeSort6.png" alt="merge sort 6">
+			<img src = "mergeSort7.png" alt="merge sort 7">
+			</div>
 		</div>
 		<div class="col-sm-6">
 		<center>
@@ -510,7 +634,7 @@
 	  <div class="row">
 		<div class="col-sm-14">
 		<center>
-			<img src="mergeFinal.png" width = "1200" height = "1600" alt = "Merge code" align = "center">
+			<img src="mergeFinal.png" width = "800" height = "1600" alt = "Merge code" align = "center">
 		</center>
 		</div>
 	  </div>
@@ -541,7 +665,13 @@
 			<a class="btn" onclick="clickBtn('0')">Home</a>
 		</div>
 	</section>
-	<br><br><br>
+	<br>
+	<ul class="breadcrumb">
+	<li><a href="#" onclick="clickBtn('0')">Home</a></li>
+	<li><a href="#" onclick="clickBtn('1')">Algorithms</a></li>
+	<li>Insertion sort</li>
+	</ul>
+	<br><br>
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-6">
@@ -556,7 +686,7 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-14">
-		  <h2>Heading</h2>
+		  <h2>NOT YET IMPLEMENTED</h2>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
 		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
 		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
@@ -580,7 +710,7 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-14">
-		  <h2>Heading</h2>
+		  <h2>NOT YET IMPLEMENTED</h2>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
 		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
 		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
@@ -599,7 +729,13 @@
 			<a class="btn" onclick="clickBtn('0')">Home</a>
 		</div>
 	</section>
-	<br><br><br>
+	<br>
+	<ul class="breadcrumb">
+	<li><a href="#" onclick="clickBtn('0')">Home</a></li>
+	<li><a href="#" onclick="clickBtn('1')">Algorithms</a></li>
+	<li>Bubble sort</li>
+	</ul>
+	<br><br>
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-6">
@@ -614,7 +750,7 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-14">
-		  <h2>Heading</h2>
+		  <h2>NOT YET IMPLEMENTED</h2>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
 		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
 		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
@@ -638,7 +774,7 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-14">
-		  <h2>Heading</h2>
+		  <h2>NOT YET IMPLEMENTED</h2>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
 		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
 		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
@@ -657,7 +793,13 @@
 			<a class="btn" onclick="clickBtn('0')">Home</a>
 		</div>
 	</section>
-	<br><br><br>
+	<br>
+	<ul class="breadcrumb">
+	<li><a href="#" onclick="clickBtn('0')">Home</a></li>
+	<li><a href="#" onclick="clickBtn('1')">Algorithms</a></li>
+	<li>Counting sort</li>
+	</ul>
+	<br><br>
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-6">
@@ -672,7 +814,7 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-14">
-		  <h2>Heading</h2>
+		  <h2>NOT YET IMPLEMENTED</h2>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
 		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
 		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
@@ -696,7 +838,7 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-14">
-		  <h2>Heading</h2>
+		  <h2>NOT YET IMPLEMENTED</h2>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
 		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
 		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
@@ -715,7 +857,13 @@
 			<a class="btn" onclick="clickBtn('0')">Home</a>
 		</div>
 	</section>
-	<br><br><br>
+	<br>
+	<ul class="breadcrumb">
+	<li><a href="#" onclick="clickBtn('0')">Home</a></li>
+	<li><a href="#" onclick="clickBtn('1')">Algorithms</a></li>
+	<li>Heapsort</li>
+	</ul>
+	<br><br>
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-6">
@@ -730,7 +878,7 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-14">
-		  <h2>Heading</h2>
+		  <h2>NOT YET IMPLEMENTED</h2>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
 		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
 		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
@@ -754,7 +902,7 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-14">
-		  <h2>Heading</h2>
+		  <h2>NOT YET IMPLEMENTED</h2>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
 		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
 		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
@@ -773,7 +921,13 @@
 			<a class="btn" onclick="clickBtn('0')">Home</a>
 		</div>
 	</section>
-	<br><br><br>
+	<br>
+	<ul class="breadcrumb">
+	<li><a href="#" onclick="clickBtn('0')">Home</a></li>
+	<li><a href="#" onclick="clickBtn('1')">Algorithms</a></li>
+	<li>Quick sort</li>
+	</ul>
+	<br><br>
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-6">
@@ -788,7 +942,7 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-14">
-		  <h2>Heading</h2>
+		  <h2>NOT YET IMPLEMENTED</h2>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
 		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
 		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
@@ -812,7 +966,7 @@
 	<div class="container">
 	  <div class="row">
 		<div class="col-sm-14">
-		  <h2>Heading</h2>
+		  <h2>NOT YET IMPLEMENTED</h2>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tincidunt, lectus ut dapibus congue, sapien ipsum tincidunt libero, 
 		  vehicula egestas purus ipsum sit amet orci. In ultricies tincidunt condimentum. Duis in arcu eget odio viverra maximus. 
 		  Sed elementum sit amet massa at dignissim. Aliquam vitae hendrerit lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
@@ -822,11 +976,11 @@
 	  </div>
 	</div>
 </div>
-<br><br><br><br>
+<br><br>
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <p>Posted by: Stephen Walker</p>
-  <p>Contact information: <a href="mailto:Stephen.p.walker@hotmail.com">
-  Stephen.p.walker@hotmail.com</a>.</p>
+  <p>Posted by: Name</p>
+  <p>Contact information: <a href="mailto:email@example.com">
+  email@example.com</a>.</p>
 </div>
 </div>
 </body>
